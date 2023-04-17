@@ -1,0 +1,30 @@
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Score One</th>
+        <th scope="col">Score Two</th>
+        <th scope="col">Team One</th>
+        <th scope="col">Team Two</th>
+        <th scope="col">Action</th>
+
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let m of matches">
+        <td>{{m.id}}</td>
+        <td>{{m.scoreOne}}</td>
+        <td>{{m.scoreTwo}}</td>
+        <td>{{m.teamOne  |reverse}}</td>
+        <td>{{m.teamTwo}}</td>
+        <td >
+            <button class="btn btn-success"  (click)="goToDisplay(m.id)">Display</button>
+            <button class="btn btn-warning" (click)="goToEdit(m.id) " >Edit</button>
+            <button class="btn btn-danger" (click)="deletMatch(m.id)">Delet</button>
+        </td>
+
+      </tr>
+  
+    </tbody>
+  </table>
